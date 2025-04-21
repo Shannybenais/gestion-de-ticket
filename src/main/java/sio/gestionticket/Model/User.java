@@ -1,31 +1,56 @@
-package sio.gestionticket.Model; // Définition du package où se trouve la classe User
+package sio.gestionticket.Model;
 
-public class User // Déclaration de la classe User
-{
-    // Déclaration des attributs privés de la classe User
-    private int idUser;        // Identifiant unique de l'utilisateur
-    private String nomUser;    // Nom de l'utilisateur
-    private String statutUser; // Statut de l'utilisateur (exemple : "Admin", "Technicien", "Utilisateur")
+public class User {
+    // Attributs existants
+    private int idUser;
+    private String nomUser;
+    private String statutUser;
 
-    // Constructeur de la classe permettant d'initialiser un utilisateur avec ses attributs
+    // Attributs manquants
+    private String prenomUser;
+    private String loginUser;
+    private String pwdUser;
+
+    // Constructeur existant pour la liste des utilisateurs (ne pas supprimer)
     public User(int idUser, String nomUser, String statutUser) {
-        this.idUser = idUser;       // Initialisation de l'ID de l'utilisateur
-        this.nomUser = nomUser;     // Initialisation du nom de l'utilisateur
-        this.statutUser = statutUser; // Initialisation du statut de l'utilisateur
+        this.idUser = idUser;
+        this.nomUser = nomUser;
+        this.statutUser = statutUser;
     }
 
-    // Méthode pour récupérer l'ID de l'utilisateur
+    // Constructeur complet pour l'authentification
+    public User(int idUser, String nomUser, String prenomUser, String loginUser, String pwdUser, String statutUser) {
+        this.idUser = idUser;
+        this.nomUser = nomUser;
+        this.prenomUser = prenomUser;
+        this.loginUser = loginUser;
+        this.pwdUser = pwdUser;
+        this.statutUser = statutUser;
+    }
+
+    // Getters existants
     public int getIdUser() {
         return idUser;
     }
 
-    // Méthode pour récupérer le nom de l'utilisateur
     public String getNomUser() {
         return nomUser;
     }
 
-    // Méthode pour récupérer le statut de l'utilisateur
     public String getStatutUser() {
         return statutUser;
+    }
+
+    // Nouveaux getters
+    public String getPrenomUser() {
+        return prenomUser;
+    }
+
+    public String getLoginUser() {
+        return loginUser;
+    }
+
+    public String getPwdUser() {
+        return pwdUser;
     }
 }

@@ -5,4 +5,5 @@ module sio.devoir3sio1b {
     opens sio.gestionticket.Model;
     opens sio.gestionticket to javafx.fxml;
     exports sio.gestionticket;
+
 }

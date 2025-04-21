@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.gestionticket.RapportController">
+    <top>
+        <HBox style="-fx-background-color: purple;">
+            <children>
+                <Label alignment="CENTER" maxWidth="Infinity" style="-fx-background-color: purple;" text="Rapports" textFill="WHITE" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="System Bold" size="35.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                </Label>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="20.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <VBox spacing="10.0">
+                    <children>
+                        <Label text="Nombre de tickets traités par utilisateur" style="-fx-font-weight: bold;">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="tvTicketsParUser">
+                            <columns>
+                                <TableColumn fx:id="tcNomUtilisateur1" prefWidth="200.0" text="Utilisateur" />
+                                <TableColumn fx:id="tcNbTickets1" prefWidth="150.0" text="Nombre de tickets" />
+                            </columns>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                        </TableView>
+                    </children>
+                </VBox>
+                <VBox spacing="10.0">
+                    <children>
+                        <Label text="Nombre de tickets traités par utilisateur et priorité" style="-fx-font-weight: bold;">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="tvTicketsParUserEtPriorite">
+                            <columns>
+                                <TableColumn fx:id="tcNomUtilisateur2" prefWidth="200.0" text="Utilisateur" />
+                                <TableColumn fx:id="tcPriorite" prefWidth="150.0" text="Priorité" />
+                                <TableColumn fx:id="tcNbTickets2" prefWidth="150.0" text="Nombre de tickets" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+                <HBox spacing="20.0">
+                    <children>
+                        <VBox spacing="10.0">
+                            <children>
+                                <Label text="Tickets en retard" style="-fx-font-weight: bold;">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                    <children>
+                                        <Label text="Nombre total de tickets en retard:" />
+                                        <Label fx:id="lblNbTicketsRetard" style="-fx-font-weight: bold;" text="0" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label text="Liste des tickets en retard" style="-fx-font-weight: bold;">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="tvTicketsEnRetard" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="tcNumeroTicket" prefWidth="60.0" text="ID" />
+                                <TableColumn fx:id="tcNomTicket" prefWidth="200.0" text="Nom" />
+                                <TableColumn fx:id="tcDateTicket" prefWidth="100.0" text="Date création" />
+                                <TableColumn fx:id="tcEtatTicket" prefWidth="100.0" text="État" />
+                                <TableColumn fx:id="tcDateFinSouhaitee" prefWidth="100.0" text="Date limite" />
+                                <TableColumn fx:id="tcUtilisateur" prefWidth="150.0" text="Utilisateur" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <Button fx:id="btnFermer" mnemonicParsing="false" onAction="#btnFermerClicked" text="Fermer" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
